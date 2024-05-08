@@ -121,7 +121,7 @@ static u32 AntApi_u32Timeout;                       /*!< @brief Timeout counter 
 static u8* AntApi_apu8AntAssignChannel[] = {G_au8AntSetNetworkKey, G_au8AntLibConfig, G_au8AntAssignChannel, G_au8AntSetChannelID, 
                                             G_au8AntSetChannelPeriod, G_au8AntSetChannelRFFreq, G_au8AntSetChannelPower,
                                             G_au8AntSetSearchTimeout
-                                           };       /*!< @brief Message for channel assignment.  Set ANT_ASSIGN_MESSAGES for number of messages. */
+                                            };       /*!< @brief Message for channel assignment.  Set ANT_ASSIGN_MESSAGES for number of messages. */
     
 
 /***********************************************************************************************************************

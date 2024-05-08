@@ -18,10 +18,30 @@ To start a new task using this user_app1 as a template:
 #ifndef __USER_APP1_H
 #define __USER_APP1_H
 
+#define MAX_CODE_LENGTH 13
+#define GAME_TIME 60
 /**********************************************************************************************************************
 Type Definitions
 **********************************************************************************************************************/
+typedef enum{
+  FAILURE1,
+  WAITING1,
+  COMPLETED1
+} State;
 
+typedef enum{
+  NORMAL,
+  BLIND,
+} GameMode;
+
+typedef struct{
+  int current_index;
+  char sequence[MAX_CODE_LENGTH];
+  int sequenceLength;
+  GameMode gamemode;
+  State state;
+  u16 score;
+} SequenceGame;
 
 /**********************************************************************************************************************
 Function Declarations
@@ -37,6 +57,22 @@ Function Declarations
 /*--------------------------------------------------------------------------------------------------------------------*/
 void UserApp1Initialize(void);
 void UserApp1RunActiveState(void);
+char* input(SequenceGame* game, char button);
+void resetGame(SequenceGame* game);
+void InitializeGame(SequenceGame* game, bool displaySequence);
+void ADCCallBack(u16 result);
+void timer(void);
+void intToString(int number, char *str);
+void resetAllButtonStates(void);
+void delay(uint32_t milliseconds);
+void displayInput(void);
+void gameOver(u8 u8Address_, u8 *u8Message);
+void displayScore(SequenceGame* game);
+void toggleGameMode(void);
+void playFunTune(void);
+void playSadTune(void);
+void playSwitchingSound(void);
+void playSingleNote(u16 note);
 
 
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -48,13 +84,31 @@ void UserApp1RunActiveState(void);
 State Machine Declarations
 ***********************************************************************************************************************/
 static void UserApp1SM_Idle(void);    
-static void UserApp1SM_Error(void);         
+static void UserApp1SM_Error(void);      
+
 
 
 
 /**********************************************************************************************************************
 Constants / Definitions
 **********************************************************************************************************************/
+#define U8_ANT_CHANNEL_USERAPP (u8)ANT_CHANNEL_0 /* Channel 0 – 7 */
+
+#define U8_ANT_DEVICE_LO_USERAPP (u8)0x0 /* Low byte of two-byte Device # */
+
+#define U8_ANT_DEVICE_HI_USERAPP (u8)0x0 /* High byte of two-byte Device # */
+
+#define U8_ANT_DEVICE_TYPE_USERAPP (u8)0 /* 1 – 255 */
+
+#define U8_ANT_TRANSMISSION_TYPE_USERAPP (u8)0 /* 1-127 (MSB is pairing bit) */
+
+#define U8_ANT_CHANNEL_PERIOD_LO_USERAPP (u8)0x00 /* Low byte of two-byte channel period */
+
+#define U8_ANT_CHANNEL_PERIOD_HI_USERAPP (u8)0x20 /* High byte of two-byte channel period */
+
+#define U8_ANT_FREQUENCY_USERAPP (u8)8 /* 2400MHz + this number 0 – 99 */
+
+#define U8_ANT_TX_POWER_USERAPP RADIO_TX_POWER_4DBM /* RADIO_TX_POWER_xxx */
 
 
 #endif /* __USER_APP1_H */
