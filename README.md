@@ -1,1 +1,2 @@
-# PROJECT: Fun little sequence game on an ANT development board
+# PROJECT: A bomb defuse game made on an ANT development board
+
