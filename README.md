@@ -27,13 +27,6 @@ git clone https://github.com/DavidNg32/EiE_DefuseGame.git
 ### Executing program
 * Press build button on the IAR interface.
 
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
 ## License
 
 This project is licensed under the [MIT] License - see the LICENSE.md file for details
