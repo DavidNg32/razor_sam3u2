@@ -1,4 +1,4 @@
-# Project Title
+# BOMB DEFUSAL GAME
 
 A bomb defuse game made on an Engenuics development board
 
