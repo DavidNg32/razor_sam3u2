@@ -4,7 +4,7 @@ A bomb defuse game made on an Engenuics development board
 
 ## Description
 
-This project implements a bomb defusal game using an Engenuics development board as a final project of University Of Calgary Embedded In Embedded Mentoring Program. Players must input the randomized sequence generated via the LCD Screen via push buttons as much as possible within a set time. The game is built using a combination of LED, LCD lights, Buttons to create a satisfying and responsive product.
+This project implements a bomb defusal game using an Engenuics development board as a final project of University Of Calgary [Embedded In Embedded](https://embeddedinembedded.com/) Mentoring Program. Players must input the randomized sequence generated via the LCD Screen via push buttons as much as possible within a set time. The game is built using a combination of LED, LCD lights, Buttons to create a satisfying and responsive product.
 
 ## Showcase
 
